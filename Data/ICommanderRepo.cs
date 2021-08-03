@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using Commander.Models;
-// Interfaces always start with "I"
 
 namespace Commander.Data
 {
     public interface ICommanderRepo
     {
-        IEnumerable<Command> GetAppCommands();
+        bool SaveChanges();
+        IEnumerable<Command> GetAllCommands();
         Command GetCommandById(int id);
+        void CreateCommand(Command cmd);
     }
 }
